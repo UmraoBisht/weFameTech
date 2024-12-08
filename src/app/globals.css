@@ -2,20 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/*________________________________*\
+* BASE
+\*________________________________*/
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply text-zinc-900 bg-zinc-50 h-[200vh];
+}
+@layer {
+  input {
+    @apply p-4 text-zinc-900 bg-transparent rounded focus:outline-none;
+  }
+
+  /*________________________________*\
+* Utility
+\*________________________________*/
+
+  .container {
+    @apply py-4 mx-auto lg:max-w-6xl lg:px-4;
+  }
+
+  .img-box {
+    @apply bg-zinc-700 overflow-hidden;
+  }
+
+  .img-cover {
+    @apply w-full h-full object-cover;
+  }
+
+  .section {
+    @apply pt-20 lg:pt-32;
+  }
 }
